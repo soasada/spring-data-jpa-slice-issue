@@ -29,7 +29,7 @@ class ItemIntegrationTest {
 
     @Test
     void shouldReturnItemSliceInsteadOfPage() {
-        var itemSlice = itemRepository.findAll(Pageable.ofSize(10));
+        var itemSlice = itemRepository.findAllBy(Pageable.ofSize(10));
         assertThat(itemSlice).isInstanceOf(SliceImpl.class);
     }
 }
